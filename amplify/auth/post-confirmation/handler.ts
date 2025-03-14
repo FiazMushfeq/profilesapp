@@ -10,7 +10,7 @@ Amplify.configure(
         API: {
             GraphQL: {
                 endpoint: env.AMPLIFY_DATA_GRAPHQL_ENDPOINT,
-                region: env.AMPLIFY_DATA_REGION,
+                region: env.AWS_REGION,
                 defaultAuthMode: "iam",
             },
         },
@@ -20,9 +20,9 @@ Amplify.configure(
             credentialsProvider: {
                 getCredentialsAndIdentityId: async () => ({
                     credentials: {
-                        accessKeyId: env.AMPLIFY_DATA_ACCESS_KEY_ID,
-                        secretAccessKey: env.AMPLIFY_DATA_SECRET_ACCESS_KEY,
-                        sessionToken: env.AMPLIFY_DATA_SESSION_TOKEN,
+                        accessKeyId: env.AWS_ACCESS_KEY_ID,
+                        secretAccessKey: env.AWS_SECRET_ACCESS_KEY,
+                        sessionToken: env.AWS_SESSION_TOKEN,
                     },
                 }),
                 clearCredentialsAndIdentityId: async () => {},
